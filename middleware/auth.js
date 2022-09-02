@@ -5,6 +5,13 @@ module.exports = {
       } else {
         res.redirect('/')
       }
+    },
+    ensureGuest: function (req, res, next) {
+      if (req.isAuthenticated()) {
+          res.redirect('/lists')
+      } else {
+          return next()
+      }
     }
   }
   
