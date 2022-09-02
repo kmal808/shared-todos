@@ -15,12 +15,13 @@ Array.from(todoComplete).forEach((el)=>{
 })
 
 async function deleteItem(){
+    console.log('hi')
     const itemId = this.parentNode.dataset.id
 
     // Checks if we are trying to delete a list
     const isList = this.parentNode.classList.contains('listItem')
     // Set fetch to proper url
-    const url = isList ? 'lists/deleteList' : 'todos/deleteTodo'
+    const url = isList ? '/lists/deleteList' : '/todos/deleteTodo'
     try{
         const response = await fetch(url, {
             method: 'delete',
@@ -40,7 +41,7 @@ async function deleteItem(){
 async function markTodoComplete(){
     const todoId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/markComplete', {
+        const response = await fetch('/todos/markComplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -58,7 +59,7 @@ async function markTodoComplete(){
 async function markTodoIncomplete(){
     const todoId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/markIncomplete', {
+        const response = await fetch('/todos/markIncomplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({

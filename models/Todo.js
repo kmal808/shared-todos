@@ -15,6 +15,7 @@ const TodoSchema = new mongoose.Schema({
   },
   listId: {
     type: String,
+    required: true
   }
 })
 

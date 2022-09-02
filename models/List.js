@@ -10,7 +10,8 @@ const ListSchema = new mongoose.Schema({
     required: true
   },
   invitedUsers: [{
-    type: String
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
   }],
 })
 
