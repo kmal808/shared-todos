@@ -3,7 +3,7 @@ const router = express.Router()
 const listsController = require('../controllers/lists') 
 const { ensureAuth } = require('../middleware/auth')
 
-router.get('/lists', ensureAuth, listsController.getLists)
+router.get('/', ensureAuth, listsController.getLists)
 
 router.post('/lists/createList', listsController.createList)
 
