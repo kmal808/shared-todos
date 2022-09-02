@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Shared Todos</h1>
+    <ul>
+    <% shared.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.shared %></span>
+                <span class='delShared'> Delete </span>
+            </li>
+    <% }) %>    
+    </ul>
+    </br>
+    <form action="/shared/createShared" method='POST'>
+        <input type="text" placeholder="Enter Shared Todo Item" name='sharedItem'>
+         </br>
+        <!-- <input type="text" placeholder="Enter username to share this with" name='sharedItem'> -->
+        <input type="submit">
+    </form>
+    </br>
+    <a href="/todos">Todos</a>
+    </br>
+    <a href="/logout">Logout</a>
+
+    <script src="js/shared.js"></script>
+</body>
+</html>
