@@ -11,4 +11,6 @@ router.post('/createList', ensureAuth, listsController.createList)
 
 router.delete('/deleteList', ensureAuth, listsController.deleteList)
 
+router.post('/addUser/:id', ensureAuth, listsController.addUser)
+
 module.exports = router

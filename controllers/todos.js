@@ -21,6 +21,10 @@ module.exports = {
             if(!list){
                 res.redirect('/')
             } 
+
+            // Users that are authorized to view the list
+            const invitedUsers = list.invitedUsers
+
             // User is not in invitedUsers (is there a better way to check this?)
             if (list.userId != req.user.id && !invitedUsers.filter(user => user._id == req.user.id).length > 0) {
                 res.redirect('/lists/')
