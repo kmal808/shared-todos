@@ -10,6 +10,8 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 const listRoutes = require('./routes/lists')
+const sharedRoutes = require('./routes/shared')
+
 
 require('dotenv').config({path: './config/.env'})
 
@@ -44,6 +46,8 @@ app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
 
 app.use('/lists', listRoutes)
+app.use('/shared', sharedRoutes)
+
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
