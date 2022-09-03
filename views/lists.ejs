@@ -36,9 +36,24 @@
           <% }) %>
         </ul>
 
-        <form action="/lists/createList" method="POST">
-          <input type="text" placeholder="Enter list name" name="name" />
-          <input type="submit" value="Create" />
+        <h2>Lists Shared With You</h2>
+
+        <% if (sharedLists.length > 0) { %>
+            <ul>
+            <% sharedLists.forEach( el => { %>
+                <li class='listItem' data-id='<%=el._id%>'>
+                    <a href="/lists/<%=el._id%>" class="list"><%= el.name %></a>
+                </li>
+            <% }) %>
+            </ul>
+        <% } else { %>
+            <p>You haven't been shared a list yet.</p>
+        <% } %>
+
+
+        <form action="/lists/createList" method='POST'>
+            <input type="text" placeholder="Enter list name" name='name'>
+            <input type="submit" value="Create">
         </form>
 
         <div class="button-container">

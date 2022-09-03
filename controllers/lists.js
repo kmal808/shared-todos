@@ -5,9 +5,14 @@ const User = require('../models/User')
 module.exports = {
     getAllLists: async (req,res)=>{
         try{
+            // Get all lists
             const lists = await List.find({userId:req.user.id})
 
-            res.render('lists.ejs', {lists, user: req.user})
+            // Get all lists that added us to authorized users
+            const sharedLists = await List.find({"invitedUsers": req.user.id})
+            console.log(sharedLists)
+            
+            res.render('lists.ejs', {lists, user: req.user, sharedLists})
         }catch(err){
             console.log(err)
         }
