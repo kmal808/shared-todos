@@ -1,18 +1,18 @@
 const mongoose = require('mongoose')
 
 const ListSchema = new mongoose.Schema({
-  list: {
+  name: {
     type: String,
-    required: true,
-  },
-  completed: {
-    type: Boolean,
     required: true,
   },
   userId: {
     type: String,
     required: true
-  }
+  },
+  invitedUsers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }],
 })
 
 module.exports = mongoose.model('List', ListSchema)

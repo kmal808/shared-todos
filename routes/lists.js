@@ -3,14 +3,12 @@ const router = express.Router()
 const listsController = require('../controllers/lists') 
 const { ensureAuth } = require('../middleware/auth')
 
-router.get('/', ensureAuth, listsController.getLists)
+router.get('/', ensureAuth, listsController.getAllLists)
 
-router.post('/createList', listsController.createList)
+router.get('/:id', ensureAuth, listsController.getList)
 
-router.put('/markComplete', listsController.markComplete)
+router.post('/createList', ensureAuth, listsController.createList)
 
-router.put('/markIncomplete', listsController.markIncomplete)
-
-router.delete('/deleteList', listsController.deleteList)
+router.delete('/deleteList', ensureAuth, listsController.deleteList)
 
 module.exports = router
