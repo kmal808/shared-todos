@@ -54,7 +54,6 @@ module.exports = {
     },
 
     deleteList: async (req, res)=>{
-        console.log(req.body)
         try{
             await List.findOneAndDelete({_id:req.body.itemIdFromJSFile})
             console.log('Deleted List')
@@ -114,4 +113,20 @@ module.exports = {
             console.log(err)
          }
     },
+
+    removeUser: async (req, res)=>{
+        try{
+            console.log(req.body)
+            // Remove user from invitedUsers
+            await List.updateOne(
+                { _id: req.body.listId }, 
+                { $pull: { invitedUsers: req.body.userId } },
+            );
+
+            console.log('Removed user.')  
+            res.json('Removed user.')      
+        }catch(err){
+            console.error(err)
+        }
+    }
 }    

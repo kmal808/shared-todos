@@ -30,8 +30,8 @@
         <h4>Users with access:</h4>
         <ul>
             <% invitedUsers.forEach( user => { %>
-                <li class='todoItem'>
-                    <%= user.userName %> <button> Kick from list </button> 
+                <li class='todoItem' data-list='<%= listId %>' data-id='<%=user._id%>'>
+                    <%= user.userName %> <span class='remove-user'> Remove from list </span>
                 </li>
             <% }) %>
         </ul>
