@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="css/dark-mode">
-    <link rel="stylesheet" href="css/todos.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/todos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
@@ -20,52 +20,56 @@
     <title>To-dos</title>
 </head>
 <body>
-    <div class="container">
-    <div class="main">
-    <h1><%= listName %></h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
+    <div class="dark-screen">
+        <div class="bg"></div>
+        <div id="toggle" class="toggle-btn"></div>
+        <div id="blender" class="expand"></div>
+        <div class="container">
+            <div class="main">
+                <h1><%= listName %></h1>
+                <ul>
+                <% todos.forEach( el => { %>
+                        <li class='todoItem' data-id='<%=el._id%>'>
+                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                            <span class='del'> Delete </span>
+                        </li>
+                <% }) %>    
+                </ul>
 
-    <h2>The list has <%= left %> things left to do.</h2>
+                <h2>The list has <%= left %> things left to do.</h2>
 
-    <form action="/todos/createTodo/<%= listId %>" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
+                <form action="/todos/createTodo/<%= listId %>" method='POST'>
+                    <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+                    <input type="submit">
+                </form>
 
-    <% if (isOwner) { %>
-        <h3>List Options:</h3>
-        <h4>Users with access:</h4>
-        <ul>
-            <% invitedUsers.forEach( user => { %>
-                <li class='todoItem' data-list='<%= listId %>' data-id='<%=user._id%>'>
-                    <%= user.userName %> <span class='remove-user'> Remove from list </span>
-                </li>
-            <% }) %>
-        </ul>
+                <% if (isOwner) { %>
+                <h3>List Options:</h3>
+                <h4>Users with access:</h4>
+                <ul>
+                    <% invitedUsers.forEach( user => { %>
+                        <li class='todoItem' data-list='<%= listId %>' data-id='<%=user._id%>'>
+                            <%= user.userName %> <span class='remove-user'> Remove from list </span>
+                        </li>
+                    <% }) %>
+                </ul>
 
-        <h4>Add someone to list:</h4>
-        <% if (locals.messages.errors) { %>
-            <% messages.errors.forEach( el => { %>
-                <div class="alert alert-danger"><%= el %></div>
-            <% }) %>
-        <% } %>
-        <form action="/lists/addUser/<%= listId %>" method='POST'>
-            <input type="username" placeholder="Enter Username" name='username'>
-            <input type="submit">
-        </form>
-    <% } %>
-    <div class="button-container">
-        <a href="/">Back</a>
-      </div>
-   
-    </div>
+                <h4>Add someone to list:</h4>
+                <% if (locals.messages.errors) { %>
+                    <% messages.errors.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el %></div>
+                    <% }) %>
+                <% } %>
+                <form action="/lists/addUser/<%= listId %>" method='POST'>
+                    <input type="username" placeholder="Enter Username" name='username'>
+                    <input type="submit">
+                </form>
+                <% } %>
+                <div class="button-container">
+                    <a href="/">Back</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="/js/main.js"></script>
