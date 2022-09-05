@@ -66,11 +66,18 @@
                         <div class="alert alert-danger"><%= el %></div>
                     <% }) %>
                 <% } %>
-                <form action="/lists/addUser/<%= listId %>" method='POST'>
-                    <input type="username" placeholder="Enter Username" name='username'>
-                    <input type="submit">
+                        
+             
+                <form name="adduser" action="/lists/addUser/<%= listId %>" method='POST'>
+                    <select name="username" id="username" onchange="this.adduser.submit()">
+                        <% users.forEach( el => { %> 
+                        <option value="<%=el.user._id%>">Look for User</option>
+                        <% }) %>
+                    </select>
+                    <!-- <input type="username" placeholder="Enter Username" name='username'>
+                    <input type="submit"> -->
                 </form>
-                <% } %>
+
                 <div class="button-container">
                     <a href="/">Back</a>
                 </div>
