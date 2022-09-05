@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/todos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
@@ -17,6 +17,9 @@
 		rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 	/>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+
     <title>To-dos</title>
 </head>
 <body>
@@ -26,7 +29,7 @@
         <div id="blender" class="expand"></div>
         <div class="container">
             <div class="main">
-                <h1><%= listName %></h1>
+                <h1 class="font-secondary"><%= listName %></h1>
                 <ul>
                 <% todos.forEach( el => { %>
                         <li class='todoItem' data-id='<%=el._id%>'>
@@ -36,7 +39,9 @@
                 <% }) %>    
                 </ul>
 
-                <h2>The list has <%= left %> things left to do.</h2>
+                <h3>The list has <%= left %> things left to do.</h3>
+
+                <h2 class="font-secondary">Add a New Task to the List</h2>
 
                 <form action="/todos/createTodo/<%= listId %>" method='POST'>
                     <input type="text" placeholder="Enter Todo Item" name='todoItem'>
@@ -44,17 +49,18 @@
                 </form>
 
                 <% if (isOwner) { %>
-                <h3>List Options:</h3>
-                <h4>Users with access:</h4>
+                <h3 class="font-secondary">List Options:</h3>
+                <h4 class="font-secondary">Users with access:</h4>
                 <ul>
                     <% invitedUsers.forEach( user => { %>
                         <li class='todoItem' data-list='<%= listId %>' data-id='<%=user._id%>'>
-                            <%= user.userName %> <span class='remove-user'> Remove from list </span>
+                            <%= user.userName %> <br>
+                            <span class='remove-user remove'> Remove <%= user.userName %> from list </span>
                         </li>
                     <% }) %>
                 </ul>
 
-                <h4>Add someone to list:</h4>
+                <h2 class="font-secondary">Add someone to list:</h2>
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el %></div>
