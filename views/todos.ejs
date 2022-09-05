@@ -50,7 +50,7 @@
 
                 <% if (isOwner) { %>
                 <h3 class="font-secondary">List Options:</h3>
-                <h4 class="font-secondary">Users with access:</h4>
+                <h2 class="font-secondary">Users with access:</h2>
                 <ul>
                     <% invitedUsers.forEach( user => { %>
                         <li class='todoItem' data-list='<%= listId %>' data-id='<%=user._id%>'>
@@ -60,7 +60,7 @@
                     <% }) %>
                 </ul>
 
-                <h2 class="font-secondary">Add someone to list:</h2>
+                <h2 class="font-secondary">Add someone to this list:</h2>
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el %></div>
