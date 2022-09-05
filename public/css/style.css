@@ -2,10 +2,10 @@
 /* Base
 /*******************************************/
 body {
-	font-family: "Fjalla One", sans-serif;
+	font-family: 'Fjalla One', sans-serif;
 	overflow: hidden;
 }
-  
+
 h1 {
 	color: red;
 	font-size: 50px;
@@ -25,7 +25,7 @@ li {
 	list-style-type: square;
 	text-align: left;
 	text-decoration: none;
-  }
+}
 
 /******************************************
 /* Layout
@@ -36,7 +36,7 @@ li {
 	align-items: center;
 	margin: 0px auto;
 }
-  
+
 .main {
 	max-width: 100%;
 	display: block;
@@ -44,12 +44,14 @@ li {
 	text-align: center;
 }
 
-.del, .remove-user i {
+.del,
+.remove,
+.remove-user i {
 	color: #b11531;
 	font-size: 16px;
 	padding-left: 10px;
 	vertical-align: middle;
-}  
+}
 
 .button-container {
 	display: flex;
@@ -58,7 +60,8 @@ li {
 	margin-top: 46px;
 }
 
-.button-container a, input[type="submit"] {
+.button-container a,
+input[type='submit'] {
 	background-color: #b11531;
 	color: white;
 	text-decoration: none;
@@ -75,13 +78,14 @@ li {
 	color: #3e4c5e;
 }
 
-.button-container a:hover, input[type="submit"]:hover {
+.button-container a:hover,
+input[type='submit']:hover {
 	background-color: #ff0836;
 	color: #fff;
 	border: none;
 }
 
-.font-secondary{
+.font-secondary {
 	font-family: 'Lobster Two', cursive;
 }
 

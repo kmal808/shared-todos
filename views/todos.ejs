@@ -65,14 +65,14 @@
                         <div class="alert alert-danger"><%= el %></div>
                     <% }) %>
                 <% } %>
-                <!-- <form action="/lists/addUser/<%= listId %>" method='POST'>
-                    <input type="username" placeholder="Enter Username" name='username'>
-                    <input type="submit">
-                </form> -->
-                <form name="username">
+            
+                <form name="username" action="/lists/addUser/<%= listId %>" method="POST">
+                    <label for="Add user">Add User</label>
                     <select name="username" onchange="document.username.submit()">
-                        <option value="<% user.userName %>">Select A User</option>
-                        <option value="<% user.userName %>"><%= user.userName %></option>                               
+                        <% users.forEach( el => { %>
+                            <option value="<%= el.userName %>"><%= el.userName %></option> 
+                        <% }) %>
+                            <option value="<%= user.userName %>" selected>Select A User</option>                             
                     </select> 
                 </form>
 
