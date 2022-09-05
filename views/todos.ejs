@@ -59,25 +59,24 @@
                         </li>
                     <% }) %>
                 </ul>
-
                 <h2 class="font-secondary">Add someone to this list:</h2>
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el %></div>
                     <% }) %>
                 <% } %>
-                        
-             
-                <form name="adduser" action="/lists/addUser/<%= listId %>" method='POST'>
-                    <select name="username" id="username" onchange="this.adduser.submit()">
-                        <% users.forEach( el => { %> 
-                        <option value="<%=el.user._id%>">Look for User</option>
-                        <% }) %>
-                    </select>
-                    <!-- <input type="username" placeholder="Enter Username" name='username'>
-                    <input type="submit"> -->
+                <!-- <form action="/lists/addUser/<%= listId %>" method='POST'>
+                    <input type="username" placeholder="Enter Username" name='username'>
+                    <input type="submit">
+                </form> -->
+                <form name="username">
+                    <select name="username" onchange="document.username.submit()">
+                        <option value="<% user.userName %>">Select A User</option>
+                        <option value="<% user.userName %>"><%= user.userName %></option>                               
+                    </select> 
                 </form>
 
+                <% } %>
                 <div class="button-container">
                     <a href="/">Back</a>
                 </div>
@@ -89,3 +88,6 @@
     <script src="/js/darkMode.js"></script>
 </body>
 </html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
