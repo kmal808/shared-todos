@@ -2,16 +2,16 @@
 /* Base
 /*******************************************/
 body {
-	font-family: 'Fjalla One', sans-serif;
-	overflow: hidden;
+  font-family: "Fjalla One", sans-serif;
 }
 
 h1 {
-	color: red;
-	font-size: 50px;
-	margin-top: 3px;
-	letter-spacing: 6px;
-	margin-bottom: 0;
+  font-family: "Open Sans", sans-serif;
+  color: red;
+  font-size: 50px;
+  margin-top: 3px;
+  letter-spacing: 6px;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -19,7 +19,7 @@ h2 {
 }
 
 p {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 ul {
@@ -28,20 +28,20 @@ ul {
 }
 
 li {
-	font-size: 25px;
-	list-style-position: inside;
-	list-style-type: square;
-	text-align: left;
-	text-decoration: none;
+  font-size: 25px;
+  list-style-position: inside;
+  list-style-type: square;
+  text-align: left;
+  text-decoration: none;
 }
 
 /******************************************
 /* Layout
 /*******************************************/
 .container {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .main {
@@ -49,53 +49,52 @@ li {
 	display: block;
 	margin: 0px auto;
 	text-align: center;
-
 }
 
 .del,
 .remove,
 .remove-user i {
-	color: #b11531;
-	font-size: 16px;
-	padding-left: 10px;
-	vertical-align: middle;
-	cursor: pointer;
+  color: #b11531;
+  font-size: 16px;
+  padding-left: 10px;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 .button-container {
-	display: flex;
-	gap: 30px;
-	justify-content: center;
-	margin-top: 46px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 46px;
 }
 
 .button-container a,
-input[type='submit'] {
-	background-color: #b11531;
-	color: white;
-	text-decoration: none;
-	border: none;
-	border-radius: 34px;
-	padding: 10px 25px;
-	font-size: 15px;
-	cursor: pointer;
+input[type="submit"] {
+  background-color: #b11531;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 34px;
+  padding: 10px 25px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .button-container a + a {
-	background-color: #fff;
-	border: 1px solid #3e4c5e;
-	color: #3e4c5e;
+  background-color: #fff;
+  border: 1px solid #3e4c5e;
+  color: #3e4c5e;
 }
 
 .button-container a:hover,
-input[type='submit']:hover {
-	background-color: #ff0836;
-	color: #fff;
-	border: none;
+input[type="submit"]:hover {
+  background-color: #ff0836;
+  color: #fff;
+  border: none;
 }
 
 .font-secondary {
-	font-family: 'Lobster Two', cursive;
+  font-family: "Open Sans", sans-serif;
 }
 
 .sharedYou {
@@ -107,12 +106,12 @@ input[type='submit']:hover {
 /* Todo
 /*******************************************/
 .completed {
-	text-decoration: line-through;
-	color: gray;
+  text-decoration: line-through;
+  color: gray;
 }
 
 .not {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 /******************************************
@@ -120,52 +119,53 @@ input[type='submit']:hover {
 /*******************************************/
 
 .bg {
-	position: fixed;
-	background: rgb(243, 242, 242);
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: -1;
+  position: fixed;
+  background: rgb(243, 242, 242);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
 .toggle-btn {
-	background: #100f2c;
-	width: 3rem;
-	height: 3rem;
-	position: fixed;
-	border-radius: 50%;
-	right: calc(50% - 21.5rem);
-	bottom: 1rem;
-	cursor: pointer;
-	transition: all 0.5s ease;
+  background: #100f2c;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  border-radius: 50%;
+  right: calc(50% - 21.5rem);
+  bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .expand {
-	transform: scale(60);
+  transform: scale(60);
 }
 
-.expand, .shrink {
-	transition: all 0.5s ease;
+.expand,
+.shrink {
+  transition: all 0.5s ease;
 }
 
 .expanded {
-	-webkit-transform: scale(60);
-	transform: scale(60);
+  -webkit-transform: scale(60);
+  transform: scale(60);
 }
 
 #blender {
-	width: 3rem;
-	height: 3rem;
-	position: fixed;
-	border-radius: 50%;
-	right: calc(50% - 21.5rem);
-	bottom: 1rem;
-	pointer-events: none;
-	background: white;
-	mix-blend-mode: difference;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  border-radius: 50%;
+  right: calc(50% - 21.5rem);
+  bottom: 1rem;
+  pointer-events: none;
+  background: white;
+  mix-blend-mode: difference;
 }
 
 .hasZIndex {
-	z-index: 1;
+  z-index: 1;
 }
