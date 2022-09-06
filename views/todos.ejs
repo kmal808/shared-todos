@@ -30,36 +30,37 @@
         <div class="container">
             <div class="main">
                 <h1 class="font-secondary"><%= listName %></h1>
+                <h2 class="font-secondary">Tasks:</h2>
                 <ul>
                 <% todos.forEach( el => { %>
                         <li class='todoItem' data-id='<%=el._id%>'>
                             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                            <span class='del'> Delete </span>
+                            <span class='del'> <i class="fa-solid fa-trash-can"></i> </span>
                         </li>
                 <% }) %>    
                 </ul>
 
                 <h3>The list has <%= left %> things left to do.</h3>
 
-                <h2 class="font-secondary">Add a New Task to the List</h2>
+                <h3 class="font-secondary">Add a new task to the list:</h3>
 
                 <form action="/todos/createTodo/<%= listId %>" method='POST'>
                     <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-                    <input type="submit" value="Add">
+                    <input type="submit" value="Add Task">
                 </form>
 
                 <% if (isOwner) { %>
-                <h3 class="font-secondary">List Options:</h3>
-                <h2 class="font-secondary">Users with access:</h2>
+                <h2 class="font-secondary">List Options:</h2>
+                <h3 class="font-secondary">Users with access:</h3>
                 <ul>
                     <% invitedUsers.forEach( user => { %>
                         <li class='todoItem' data-list='<%= listId %>' data-id='<%=user._id%>'>
-                            <%= user.userName %> <br>
-                            <span class='remove-user remove'> Remove <%= user.userName %> from list </span>
+                            <%= user.userName %> 
+                            <span class='remove-user'><i class="fa-solid fa-user-slash"></i></span>
                         </li>
                     <% }) %>
                 </ul>
-                <h2 class="font-secondary">Add someone to this list:</h2>
+                <h3 class="font-secondary">Add someone to this list:</h3>
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el %></div>
