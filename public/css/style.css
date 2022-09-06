@@ -16,7 +16,6 @@ h1 {
 
 p {
 	font-size: 14px;
-	font-weight: 100;
 }
 
 li {
@@ -131,6 +130,10 @@ input[type='submit']:hover {
 	transform: scale(60);
 }
 
+.expand, .shrink {
+	transition: all 0.5s ease;
+}
+
 .expanded {
 	-webkit-transform: scale(60);
 	transform: scale(60);
@@ -145,7 +148,6 @@ input[type='submit']:hover {
 	bottom: 1rem;
 	pointer-events: none;
 	background: white;
-	transition: all 0.5s ease;
 	mix-blend-mode: difference;
 }
 
