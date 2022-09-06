@@ -36,7 +36,7 @@
 						</li>
 						<% }) %>
 					</ul>
-
+					<div class="sharedYou">
 					<h2 class="font-secondary">Lists Shared With You</h2>
 
 					<% if (sharedLists.length > 0) { %>
@@ -50,6 +50,7 @@
 					<% } else { %>
 					<p>You haven't been shared a list yet.</p>
 					<% } %>
+					</div>
 					<h2 class="font-secondary">Create a new List</h2>	
 					<form action="/lists/createList" method="POST">
 						<input type="text" placeholder="Enter list name" name="name" />
