@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <title>Login</title>
-  </head>
-  <body>
-    <div class="dark-screen">
-      <div class="bg"></div>
-      <div id="toggle" class="toggle-btn"></div>
-      <div id="blender" class="expand"></div>
-      <div class="container">
-        <div class="main">
-          <h1>LOGIN</h1>
-          <% if (locals.messages.errors) { %> <% messages.errors.forEach( el =>
-          { %>
-          <div class="alert alert-danger"><%= el.msg %></div>
-          <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-          messages.info.forEach( el => { %>
-          <div class="alert alert-danger"><%= el.msg %></div>
-          <% }) %> <% } %>
-          <form action="/login" method="POST">
-            <input type="email" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
-            <input type="submit" value="Login" />
-          </form>
-        </div>
-      </div>
-    </div>
-    <script src="/js/darkMode.js"></script>
-  </body>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/normalize.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<title>Login</title>
+	</head>
+	<body>
+		<div class="dark-screen">
+			<div class="bg"></div>
+			<div id="toggle" class="toggle-btn"></div>
+			<div id="blender" class="expand"></div>
+			<div class="container">
+				<div class="main">
+					<h1>LOGIN</h1>
+					<br>
+					<% if (locals.messages.errors) { %> <% messages.errors.forEach( el =>
+					{ %>
+					<div class="alert alert-danger"><%= el.msg %></div>
+					<% }) %> <% } %> <% if (locals.messages.info) { %> <%
+					messages.info.forEach( el => { %>
+					<div class="alert alert-danger"><%= el.msg %></div>
+					<% }) %> <% } %>
+					<form action="/login" method="POST">
+						<input type="email" name="email" placeholder="Email" />
+						<input type="password" name="password" placeholder="Password" />
+						<br>
+						<br>
+						<input type="submit" value="Login" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="/js/darkMode.js"></script>
+	</body>
+
 </html>

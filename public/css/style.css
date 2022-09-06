@@ -14,8 +14,17 @@ h1 {
   margin-bottom: 0;
 }
 
+h2 {
+	font-size: 5em;
+}
+
 p {
   font-size: 14px;
+}
+
+ul {
+	justify-content: center;
+	align-items: center;
 }
 
 li {
@@ -36,10 +45,10 @@ li {
 }
 
 .main {
-  max-width: 100%;
-  display: block;
-  margin: 0px auto;
-  text-align: center;
+	max-width: 100%;
+	display: block;
+	margin: 0px auto;
+	text-align: center;
 }
 
 .del,
@@ -86,6 +95,11 @@ input[type="submit"]:hover {
 
 .font-secondary {
   font-family: "Open Sans", sans-serif;
+}
+
+.sharedYou {
+	margin-top: 10em;
+	margin-bottom: 10em;
 }
 
 /******************************************
