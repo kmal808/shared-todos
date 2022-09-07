@@ -1,22 +1,22 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+This is a Shared Lists App with local Authentication. 
 
----
+Users can create accounts, or sign in on the initial / home page. 
+Once logged to their account they're redirected to the lists page.
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
+From the list page, users can: 
+- create and delete named lists, 
+- share those lists with other users, 
+- and access the currently available list on their profile.
 
----
+Each individual list, has tasks and autorized users can perform CRUD operations:
+- create a task
+- read/show the tasks
+- mark complete (update)
+- delete the task
 
-# Objectives
-
-- It's a beginner level app created to understand how MVC concept and logins are added
-
----
-
-# Who is this for? 
-
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+<h2>This app uses MVC architecture </h2> 
 
 ---
 
@@ -26,17 +26,17 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 ---
 
-# Install all the dependencies or node packages used for development via Terminal
+# To run this project on a code editor: 
+
+1) Install all the dependencies or node packages used for development via Terminal
 
 `npm install` 
 
----
 
-# Things to add
-
-- Create a `.env` file and add the following as `key: value` 
+2) Create a `.env` file and add the following as `key: value` 
   - PORT: 2121 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
+    
  ---
  
  Have fun testing and improving it! 😎
