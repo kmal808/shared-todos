@@ -2,7 +2,7 @@
 
 ### This is a Shared Lists App with local Authentication.
 
-### Live site https://shared-todos.bobbynoodles.com
+### Live site https://sharedtodos.bobbynoodles.com
 
 Users can create accounts, or sign in on the initial / home page.
 Once logged to their account they're redirected to the lists page.
