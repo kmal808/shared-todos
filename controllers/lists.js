@@ -24,7 +24,6 @@ module.exports = {
 			const list = await List.findById(req.params.id)
 				.populate('invitedUsers')
 				.lean()
-			const users = await User.find()
 
 			// Check if list exists
 			if (!list) {
@@ -51,6 +50,9 @@ module.exports = {
 				listId: req.params.id,
 				completed: false,
 			})
+
+			// Get all users except current user to populate addUser dropdown
+			const users = await User.find({ _id: { $ne: req.user._id } })
 
 			res.render('todos.ejs', {
 				listName: list.name,
