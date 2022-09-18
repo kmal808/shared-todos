@@ -35,7 +35,7 @@
 			<div id="blender" class="expand"></div>
 			<div class="container">
 				<div class="main">
-					<h2 class="font-secondary">Your Lists</h2>
+					<h2>Your Lists</h2>
 					<ul>
 						<% lists.forEach( el => { %>
 						<li class="listItem" data-id="<%=el._id%>">
@@ -45,7 +45,7 @@
 						<% }) %>
 					</ul>
 					<div class="sharedYou">
-						<h2 class="font-secondary">Lists Shared With You</h2>
+						<h2>Lists Shared With You</h2>
 
 						<% if (sharedLists.length > 0) { %>
 						<ul>
@@ -61,7 +61,7 @@
 						<p>You haven't been shared a list yet.</p>
 						<% } %>
 					</div>
-					<h2 class="font-secondary">Create a new List</h2>
+					<h2>Create a new List</h2>
 					<form action="/lists/createList" method="POST">
 						<input type="text" placeholder="Enter list name" name="name" />
 						<input type="submit" value="Create" />
