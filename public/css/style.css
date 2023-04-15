@@ -40,18 +40,20 @@ li {
 .container {
 	min-height: 100vh;
 	min-width: 100vw;
+	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
 }
 .top-half {
 	display: flex;
-	/* width: 100%; */
+	width: 100%;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: flex-start;
 	justify-content: space-evenly;
 	height: 50%;
 	align-content: stretch;
-	margin-top: 10%;
 }
 
 .owned-lists-container,
@@ -91,7 +93,7 @@ li {
 }
 
 .button-container {
-	display: block;
+	display: flex;
 	gap: 30px;
 	justify-content: center;
 	margin-top: 46px;
