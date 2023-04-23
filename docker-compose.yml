@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  sharedlists:
+    image: sharedlists
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      DB_STRING: db_connecton_string_goes_here
+    ports:
+      - 2121:2121

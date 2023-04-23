@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
@@ -13,7 +12,7 @@ const todoRoutes = require('./routes/todos')
 const listRoutes = require('./routes/lists')
 const sharedRoutes = require('./routes/shared')
 
-dotenv.config({ path: './config/.env' })
+require('dotenv').config({ path: './config/.env' })
 
 // Passport config
 require('./config/passport')(passport)
