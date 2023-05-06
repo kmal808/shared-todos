@@ -8,6 +8,6 @@ services:
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
-      DB_STRING: db_connecton_string_goes_here
+      DB_STRING: db_connecton_string
     ports:
       - 2121:2121
