@@ -4,8 +4,7 @@
 
 ## Shared Todos is a todo list(or any list) app with an option to share your list or lists with other authed users.
 
-Users can create accounts, or sign in on the initial / home page.
-Users can create accounts, or sign in on the initial / home page.
+Users can create accounts, or sign in on the homescreen 
 Once logged to their account they're redirected to the lists page.
 
 From the list page, users can:
