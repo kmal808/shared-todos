@@ -2,34 +2,27 @@
 
 # Live site https://sharedtodos.bobbynoodles.com
 
-## Shared Todos is a todo list(or any list) app with an option to share your list or lists with other authed users.
+## Shared Todos is a simple todo/task list app with some added sauce. 
 
-Users can create accounts, or sign in on the homescreen 
-Once logged to their account they're redirected to the lists page.
+Auth'd users can choose to share their list or lists with other auth'd users. Think aocial network meets todo lists. 
 
-From the list page, users can:
 
-- create and delete named lists,
-- share those lists with other users,
-  From the list page, users can:
+Once logged in, the user will be taken to their lists page.
 
-- create and delete named lists,
-- share those lists with other users,
-- and access the currently available list on their profile.
+From here users can:
+- create, edit, and delete lists
+- share thier lists with others
+- view and select lists that are shared with themz
 
-Each individual list, has tasks and autorized users can perform CRUD operations:
+Each indixidual list has the option to 
+- create new todos
+- read/edit todos
+- mark todos as complete (update)
+- delete tododa
 
-- create a task
-- read/show the tasks
-- mark complete (update)
-- delete the task
-
-<h2>This app uses MVC architecture </h2>
-<h2>This app uses MVC architecture </h2>
+  <h2>This was designed using MVC (_model, view, controller_)  as the architecture. Passport.js for user authorization, express.js for tbe backemd server, ejs as a template engine, and mongodb for rhe datastore. I call it s MEEN app.</h2>
 
 ---
-
-# Packages/Dependencies used
 
 # Packages/Dependencies used
 
@@ -37,29 +30,21 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 ---
 
-# To run this project on a code editor:
+# To run this project locally:
 
-# To run this project on a code editor:
+1. Creat an empty project folder, `cd` into said folder and run the 'git clone' command. 
 
-1. Install all the dependencies or node packages used for development via Terminal
-1. Install all the dependencies or node packages used for development via Terminal
+2. Once tbe files have been cloned down to your local run the 
+`npm install` command to install the needed packages and dependencies.
 
-`npm install`
-`npm install`
-
-2. Create a `.env` file and add the following as `key: value`
-3. Create a `.env` file and add the following as `key: value`
-
+3. Create a `.env` file 
+`touch .env` 
+add the following as `key: value` pairs:
 - PORT: 2121 (can be any port example: 3000)
 - DB_STRING: `your database URI`
 
----
+4. run `npm run start` to fire up the development server
 
-Have fun testing and improving it! 😎
+5. Now enter `localhost:PORT` into your browser address bar (PORTv. vv= the port number choosen in the`.env` file. 
 
-- PORT: 2121 (can be any port example: 3000)
-- DB_STRING: `your database URI`
-
----
-
-Have fun testing and improving it! 😎
+6. Make changes to your clone and enjoy 😎
